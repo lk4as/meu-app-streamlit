@@ -360,7 +360,7 @@ st.title("Sistema de Relatórios e Mesclagem de PDFs")
 # o caminho seria: "/Users/joao/Downloads/minha_imagem.png"
 #
 # Altere o valor de 'caminho_imagem' para o caminho correto da sua imagem.
-caminho_imagem = "images/Logo tradicional.png"
+caminho_imagem = "Logo tradicional.png"
 
 try:
     imagem = Image.open(caminho_imagem)
