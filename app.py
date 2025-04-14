@@ -367,7 +367,7 @@ try:
     # Utilizando colunas para centralizar a imagem (opcional)
     col1, col2, col3 = st.columns([1, 2, 1])
     with col2:
-        st.image(imagem, caption="Imagem Exemplo", use_column_width=True)
+        st.image(imagem, caption="", use_container_width=True)
 except Exception as e:
     st.error(f"Erro ao carregar a imagem. Verifique o caminho. Detalhes: {e}")
 
