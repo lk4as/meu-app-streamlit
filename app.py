@@ -266,7 +266,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 pdfmetrics.registerFont(TTFont('Raleway', 'Raleway-Regular.ttf'))
 
 def read_pdf_overlay_params(excel_path):
-    df = pd.read_excel(excel_path, sheet_name=1)
+    df = pd.read_excel(excel_path, sheet_name=0)
     nome_barco = df.loc[0, "Vessel"]
     tipo_teste = df.loc[0, "Type"]
     mes_ano = df.loc[0, "Year"]
