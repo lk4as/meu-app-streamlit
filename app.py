@@ -7,21 +7,27 @@ import pandas as pd
 from PIL import Image
 import streamlit as st
 
-# Lê credenciais do secrets.toml
+# ====== CREDENCIAIS (carregadas de .streamlit/secrets.toml) ======
 correct_username = st.secrets["DB_USERNAME"]
 correct_password = st.secrets["DB_PASSWORD"]
 
-# Login
-st.title("Acesso ao Sistema")
+# ====== INTERFACE DE LOGIN ======
+st.title("Login do Sistema")
+
 username = st.text_input("Usuário")
 password = st.text_input("Senha", type="password")
 
+# Verifica login
 if username != correct_username or password != correct_password:
-    st.warning("Insira suas credenciais para continuar.")
-    st.stop()  # Interrompe o app até que o login esteja correto
+    st.warning("Digite suas credenciais para continuar.")
+    st.stop()  # Impede que o resto do app continue se o login for inválido
 
-# A partir daqui vem seu código já existente ↓
-st.success("Login autorizado. Bem-vindo!")
+# ====== RESTANTE DO APP VEM AQUI ======
+st.success("Login bem-sucedido. Bem-vindo!")
+
+# Aqui você coloca o resto do seu app normalmente:
+# ex: carregar arquivos, gerar relatórios, mostrar botões, etc.
+
 
 # -------------------------------
 # IMPORTS PARA DOCX
