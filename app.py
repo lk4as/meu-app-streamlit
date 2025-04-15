@@ -203,7 +203,7 @@ def create_test_page(doc, test_info):
             set_cell_border(cell, **default_border_settings)
 
 def generate_test_report_docx(excel_path):
-    df = pd.read_excel(excel_path, sheet_name=1, header=0)
+    df = pd.read_excel(excel_path, sheet_name=0, header=0)
     grouped_tests = {}
     for _, row in df.iterrows():
         chapter_title = row['Section']
