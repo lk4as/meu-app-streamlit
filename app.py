@@ -5,21 +5,6 @@ import tempfile
 import streamlit as st
 import pandas as pd
 from PIL import Image
-import streamlit as st
-
-# ====== CREDENCIAIS SEGURAS ======
-correct_username = st.secrets["DB_USERNAME"]
-correct_password = st.secrets["DB_PASSWORD"]
-
-# ====== LOGIN SIMPLES (requerido sempre) ======
-st.title("Login do Sistema")
-
-username = st.text_input("Usuário")
-password = st.text_input("Senha", type="password")
-
-if username != correct_username or password != correct_password:
-    st.warning("Digite suas credenciais para continuar.")
-    st.stop()  # Interrompe a execução do app
 
 # -------------------------------
 # IMPORTS PARA DOCX
