@@ -5,6 +5,23 @@ import tempfile
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import streamlit as st
+
+# Lê credenciais do secrets.toml
+correct_username = st.secrets["DB_USERNAME"]
+correct_password = st.secrets["DB_PASSWORD"]
+
+# Login
+st.title("Acesso ao Sistema")
+username = st.text_input("Usuário")
+password = st.text_input("Senha", type="password")
+
+if username != correct_username or password != correct_password:
+    st.warning("Insira suas credenciais para continuar.")
+    st.stop()  # Interrompe o app até que o login esteja correto
+
+# A partir daqui vem seu código já existente ↓
+st.success("Login autorizado. Bem-vindo!")
 
 # -------------------------------
 # IMPORTS PARA DOCX
