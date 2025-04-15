@@ -11,22 +11,15 @@ import streamlit as st
 correct_username = st.secrets["DB_USERNAME"]
 correct_password = st.secrets["DB_PASSWORD"]
 
-# ====== LOGIN COM CONTROLE DE SESSÃO ======
-if "logged_in" not in st.session_state:
-    st.session_state.logged_in = False
+# ====== LOGIN SIMPLES (requerido sempre) ======
+st.title("Login do Sistema")
 
-if not st.session_state.logged_in:
-    st.title("Login do Sistema")
-    username = st.text_input("Usuário")
-    password = st.text_input("Senha", type="password")
-    if st.button("Entrar"):
-        if username == correct_username and password == correct_password:
-            st.session_state.logged_in = True
-            st.success("Login bem-sucedido! ✅")
-            st.experimental_rerun()  # Recarrega a interface para mostrar o app
-        else:
-            st.error("Usuário ou senha incorretos.")
-    st.stop()  # Impede que o app continue se não estiver logado
+username = st.text_input("Usuário")
+password = st.text_input("Senha", type="password")
+
+if username != correct_username or password != correct_password:
+    st.warning("Digite suas credenciais para continuar.")
+    st.stop()  # Interrompe a execução do app
 
 # -------------------------------
 # IMPORTS PARA DOCX
