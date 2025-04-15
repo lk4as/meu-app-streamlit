@@ -341,7 +341,7 @@ def run_pdf_merge(doc1_path, doc2_path, excel_path):
 # INTERFACE COM STREAMLIT
 # -------------------------------
 
-st.title("Sistema de Relatórios e Mesclagem de PDFs")
+st.title("Sistema de Geração de Reports para DP Trials")
 
 # -------------------------------
 # EXEMPLO: ADICIONANDO UMA IMAGEM NA INTERFACE
